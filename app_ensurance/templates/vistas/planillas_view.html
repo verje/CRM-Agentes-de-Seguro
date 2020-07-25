@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 <hr class="separador1">
-<div class="contenedor" style="
+<div class="contenedor p-seccion-tablas" style="
 background-image: linear-gradient(rgba(34, 34, 43, 0.7), rgba(30, 30, 32, 0.7)), url(../../static/images/bg-tabla.jpg);
 background-repeat: no-repeat;
-background-size: cover; padding: 4rem;
+background-size: cover;
 ">
     <div class="contenedor80">
         <div class="border-table">
@@ -42,14 +42,18 @@ background-size: cover; padding: 4rem;
                             <form method="POST" action="eliminar/{{planilla.id}}">
                                 {% csrf_token %}
                                 <div class="btn-group">
-                                    <a href="#" title="Ver" type="button" style="border: none; padding: 5px;"><i
+
+                                    <a href="#" title="Enviar al Cliente" type="button" class="btn-tabla"><i
+                                            class="fa fa-envelope fa-lg" style="color: #00cc99">
+                                        </i></a>
+                                    <a href=" #" title="Ver" type="button" class="btn-tabla"><i
                                             class="fa fa-info-circle fa-lg" style="color: rgb(96, 96, 228);"></i></a>
-                                    <a href="#" title="Editar" type="button" style="border: none; padding: 5px;"><i
+                                    <a href="#" title="Editar" type="button" class="btn-tabla"><i
                                             class="fa fa-pencil-square-o fa-lg"
                                             style="color: rgb(241, 178, 59);"></i></a>
 
                                     <button onclick="return eliminar();" type="submit" title="Eliminar"
-                                        style="border: none; padding: 5px;">
+                                        class="btn-tabla">
                                         <i class="fa fa-trash-o fa-lg" style="color: tomato; "></i>
                                     </button>
                                 </div>

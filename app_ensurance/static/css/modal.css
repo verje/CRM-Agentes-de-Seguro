@@ -73,21 +73,27 @@ caption i:hover {
     color: white;
     border: none;
     outline: none;
-    padding: 10px;
+    padding: 10 0px;
 }
 #form-planilla button:hover{
-    background-color: darkgray;
+    background-color: rgb(99, 123, 230);
     transition: all 0.3s ease;
 }
 
 .btn-enviar-planilla{
     background-color: #3D4850;
     border-radius: 5px 0 0 5px;
+    width: 33.33%;
+}
+.btn-enviaracliente-planilla{
+    background-color: #004e53;
+    width: 33.33%;
 }
 
 .btn-cancelar-planilla{
     background-color: #00CC99;
     border-radius: 0px 5px 5px 0px;
+    width: 33.33%;
 }
 
 .btn-aceptar-beneficiario{

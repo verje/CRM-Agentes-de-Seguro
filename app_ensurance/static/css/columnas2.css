@@ -511,6 +511,35 @@ h3{
 .p-descrip{
     font-size: 0.9rem;
 }
+.p-seccion-tablas{
+    padding: 4rem
+}
+.btn-tabla{
+    border: 1px solid rgb(197, 250, 250);
+    padding: 0.2 0.5rem;
+    background-color: white;
+    border-radius: 3px;
+    outline: none;
+}
+.btn-tabla:hover{
+    cursor: pointer;
+    background-color: rgb(226, 226, 226);
+    transition: all 0.3s ease;
+}
+.btn-ventas{
+    border: none;
+    padding: 0.5rem;
+    width: 50%;
+    background-color: #00CC99;
+    color: white;
+    border-radius: 3px;
+    outline: none;
+}
+.btn-ventas:hover{
+    background-color: #292e3d;
+    color: #00CC99;
+    transition: all 0.3s ease;
+}
 
 
 
@@ -662,5 +691,11 @@ btn-asegurarme:hover{
     .about-section {
         padding: 2.5rem;
     }
+    .p-seccion-tablas{
+        padding: 1rem
+    }
+    .btn-ventas{
+        width: 100%;
+    }        
                    
 }
