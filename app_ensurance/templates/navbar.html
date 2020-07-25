@@ -1,0 +1,31 @@
+<div class="contenedor col-12 col-xs-12 bg-nav">
+    <div class="menu_bar col-xs-6">
+        <i class="fa fa-bars" style="color: rgb(18, 23, 87);"></i>
+    </div>
+    <div class="col-2 col-xs-6 contenedor-logo">
+        <img id="logo" src="../static/images/logo.png" class="logo">
+    </div>
+    <div class="col-10 col-xs-12">
+        <nav>
+            <ul>
+                <li><a href="/"><img src="../static/icons/home.svg" height="15px"></a></li>
+                <li><a href="#">Planes</a></li>
+                <li><a href="#">Clientes</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+                {% if user.is_authenticated %}
+                <li><a id="agente" href="{% url 'profile'%}">
+                        <i class="fa fa-id-card-o" style="color:#00CC99;"></i>
+                        &nbsp;MI PERFIL</a></li>
+                <li><a id="agente" href="{% url 'logout'%}">
+                        <i class="fa fa-user-circle-o" style="color:#00CC99;"></i>
+                        &nbsp;Logout</a></li>
+                {%else%}
+                <li><a id="agente" href="/login">
+                        <i class="fa fa-user-circle-o" style="color:#00CC99;"></i>
+                        &nbsp;Login</a></li>
+                {%endif%}
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block content %}
+<hr class="separador1">
+<div id="profile" class="contenedor align-con-cen">
+    <div class="contenedor90 p-15 b-r-all" style="background-color: #ebebeb;">
+        <div class="col-6 col-xs-12 border-table">
+            <div class="col-12 col-xs-12 align-con-cen p-15 b-r-top"
+                style="background: rgb(14,0,255);
+                background: linear-gradient(180deg, #2F3441 0%, #2F3441 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);">
+                <img class="avatar" src="../static/images/img_avatar.png" height="150px" width="150px"
+                    style="border-radius: 50%; border: 5px solid white;"></div>
+            <div>
+                <div class="col-12 col-xs-12 text-align-center" style="font-weight: 500"><a href="#">Cambiar foto</a>
+                </div>
+                <hr class="hr-underline">
+                <hr class="separador1">
+                <div class="col-12 text-align-center">
+                    <h1>PERFORMANCE</h1>
+                </div>
+                <div class="col-12 col-xs-12  text-align-center">Historico ultimos 3 meses</div>
+                <hr class="separador1">
+                <div class="col-6 col-xs-6 align-con-cen">
+                    <div class="circulo text-align-center p-15" style="background-color: #00CC99;">
+                        <p class="numero-circulo">11</p>
+                        <p>Clientes Captados</p>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 align-con-cen">
+                    <div class="circulo text-align-center p-15" style="background-color: #2F3441;">
+                        <p class="numero-circulo">9</p>
+                        <p>Clientes Renovados</p>
+                    </div>
+                </div>
+                <hr class="separador1">
+                <div class="col-12 col-xs-12  align-con-cen p-15"><img src="../static/images/historico.png" width="50%">
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-xs-12">
+            <div class="contenedor90">
+                <div class="col-12 col-xs-12  separador1 border-table">
+                    <div class="contenedor90">
+                        <div class="col-12 col-xs-12  div-height mt-15">
+                            <h3>Cartera de Clientes</h3>
+                            <hr class="hr-underline">
+                        </div>
+                        <div class="col-12 col-xs-12  div-height">
+                            <div class="col-1 col-xs-1"><span class="dot"></span></div>
+                            <div class="col-7 col-xs-7">
+                                Clientes Captados
+                            </div>
+                            <div class="col-4 col-xs-4"><button class="btn-admin">Administrar</button></div>
+                        </div>
+                        <div class="col-12 col-xs-12 div-height">
+                            <div class="col-1 col-xs-1"><span class="dot"></span></div>
+                            <div class="col-7 col-xs-7">
+                                Clientes Potenciales
+                            </div>
+                            <div class="col-4 col-xs-4"><button class="btn-admin">Administrar</button></div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="separador1">
+                <div class="col-12 col-xs-12 separador1 border-table">
+                    <div class="contenedor90">
+                        <div class="col-12 col-xs-12 div-height mt-15">
+                            <h3>Polizas</h3>
+                            <hr class="hr-underline">
+                        </div>
+                        <div class="col-12 col-xs-12 div-height">
+                            <div class="col-1 col-xs-1"><span class="dot"></span></div>
+                            <div class="col-7 col-xs-7">
+                                Nuevas
+                            </div>
+                            <div class="col-4 col-xs-4"><button class="btn-admin">Administrar</button></div>
+                        </div>
+                        <div class="col-12 col-xs-12 div-height">
+                            <div class="col-1 col-xs-1"><span class="dot"></span></div>
+                            <div class="col-7 col-xs-7">
+                                Pronto vencimiento
+                            </div>
+                            <div class="col-4 col-xs-4"><button class="btn-admin">Administrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="separador1">
+                <div class="col-12 col-xs-12 separador1 border-table">
+
+                    <div class="col-12 col-xs-12 mt-15">
+                        <p class="p-title">&nbsp;<i class="fa fa-cogs fa-2x" aria-hidden="true"></i> ACCIONES</p>
+                        <hr class="hr-underline">
+                    </div>
+                    <div class="col-12 col-xs-12 separador1">
+                        <div class="col-3 col-xs-4">
+                            <button type="button" onClick="location.href='/crear_cliente'" class="btn-acciones"><i
+                                    class="fa fa-address-book-o fa-3x" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="col-9 col-xs-8">
+                            <p class="p-title">Crear Clientes</p>
+                            <p class="p-descrip">- Cree nuevos clientes para tenerlos a la mano al momento de
+                                crear una nueva planilla
+                                </p1>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xs-12 separador1">
+                        <div class="col-3 col-xs-4">
+                            <button type="button" onClick="location.href='/planilla'" class="btn-acciones"><i
+                                    class="fa fa-file-text-o fa-3x" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="col-9 col-xs-8">
+                            <p class="p-title">Crear Planilla</p>
+                            <p class="p-descrip">- Crea nuevas planillas los clientes
+                                </p1>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xs-12 separador1">
+                        <div class="col-3 col-xs-4">
+                            <button class="btn-acciones" onClick="location.href='/listado_clientes'"><i
+                                    class="fa fa-users fa-3x" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="col-9 col-xs-8">
+                            <p class="p-title">Ver Clientes</p>
+                            <p class="p-descrip">- Vea su lista de clientes <br>- Aplique acciones como eliminar o
+                                modificar
+                                </p1>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xs-12 separador1">
+                        <div class="col-3 col-xs-4">
+                            <button class="btn-acciones"><i class="fa fa-files-o fa-3x"
+                                    onClick="location.href='/listado_planillas'"></i></button>
+                        </div>
+                        <div class="col-9 col-xs-8">
+                            <p class="p-title">Ver Planilla</p>
+                            <p class="p-descrip">- Vea un listado de planillas creadas <br>- Aplique acciones como
+                                eliminar
+                                o modificar
+                                </p1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

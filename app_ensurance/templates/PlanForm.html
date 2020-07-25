@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Nuevo Plan</title>
+    <link rel="stylesheet" href="../static/css/columnas2.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Crear nuevo Plan</h1>
+    {% if errors %}
+    <!--Aqui usamos la variable errors, creada En el metodo ManageForm del archivo forms.py y pasado dentro del context -->
+    <!--Este bloque if no es necesario ya que python se encarga de hacer la validacion
+   en el metodo ManageForm en la linea if form.isvalid(), 
+  pero lo agrego para que vean como pudieramos enviar un mensaje  al form-->
+    <h1>Debe llenar todos los campos</h1>
+    {% endif%}
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        <div class="fila">
+            <div class="col-6 col-xs-12 p-5"><label for="nombre_plan"></label>
+                {{ form.nombre_plan }}
+            </div>
+            <div class="col-6 col-xs-12 p-5"><label for="cobertura_plan"></label>
+                {{ form.cobertura_plan }}
+            </div>
+            <div class="col-6 col-xs-12 p-5"><label for="condiciones"></label>
+                {{ form.condiciones }}
+            </div>
+        </div>
+        <td><input type="submit" value="Submit" /></td>
+    </form>
+</body>
+
+</html>

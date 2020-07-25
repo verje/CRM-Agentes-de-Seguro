@@ -1,0 +1,230 @@
+{% extends 'base.html'%} {% block content %}
+<div id="div-mensajes" class="col-12 col-xs-12" style="background-color: lightgrey; text-align: center;">
+    {% if form.errors %}
+    <p class="p-7">Debe llenar todos los campos</p>
+    {% endif %}
+</div>
+<div id="id01" class="modal">
+    <div id="form-beneficiario" class="modal-content animate">
+        <div class="imgcontainer-modal">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Cerrar"><i
+                    class="fa fa-times" aria-hidden="true"></i></span>
+            <img class="" src="../static/images/beneficiarios.PNG" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container-modal">
+            <div class="fila">
+                <div class="col-6 col-xs-12 p-5">Nombre Completo<br><input type="text" id="nombre-b">
+                </div>
+                <div class="col-6 col-xs-12 p-5">Documento<input type="text" name="" id="documento-b"></div>
+            </div>
+            <hr class="p-5" style="border: none;">
+            <div class="fila">
+                <div class="col-6 p-5">Edad<br><input type="number" min="0" max="100" id="edad-b">
+                </div>
+                <div class="col-6 p-5">Parentesco<br><select name="parentesco" id="parentesco-b">
+                        <option value="1">Padre</option>
+                        <option value="2">Madre</option>
+                        <option value="3">Hijo(a)</option>
+                        <option value="4">Hermano(a)</option>
+                        <option value="5">Tio(a)</option>
+                        <option value="6">Primo(a)</option>
+                        <option value="7">Ahijado(a)</option>
+                        <option value="8">Otro</option>
+                    </select></div>
+            </div>
+            <hr class="p-5" style="border: none;">
+            <div class="fila">
+                <div class="col-12 p-5">Localidad<br><input type="text" name="" id="localidad-b"></div>
+            </div>
+            <hr class="p-5" style="border: none;">
+            <div class="fila">
+                <div class="col-6 p-5">Beneficio<br><input type="number" min="1" max="100" id="beneficio-b">%
+                </div>
+                <div class="col-6 p-5">Tutor <span style="font-size: 0.5rem;">(Si es menor de
+                        edad)</span><input type="text" name="" id="tutor-b"></div>
+            </div>
+            <hr class="p-5" style="border: none;">
+
+            <div class="fila p-5 align-con-cen" style="margin-top: 1rem;">
+                <div class="col-6 align-con-cen"><button id="btn-ab" class="btn-aceptar-beneficiario"
+                        type="submit">Aceptar</button></div>
+                <div class="col-6 align-con-cen"><button onclick="document.getElementById('id01').style.display='none'"
+                        class="btn-cancelar-beneficiario" type="submit">Cancelar</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contenedor80 border-table" style="margin-top:2rem;">
+    <div class="col-12 text-align-center"
+        style="padding: 30px; color: white; border-radius: 5px 5px 0 0; background: rgb(75,101,244);
+            background: linear-gradient(180deg, rgb(161, 174, 248) 0%, rgb(191, 204, 238) 33%, rgba(240,240,240,1) 35%, rgba(240,240,240,1) 100%);">
+        <div class=" col-12 p-7"><img src="../static/images/logo.png" alt="Logo"
+                style="border-radius:30px; height: 50px;"></div>
+        <div class="col-12">
+            <h1 style="font-size: 1.5rem;">PLANILLA DE SOLICITUD DE SEGURO</h1>
+            <h6>Seguro de Vida</h6>
+        </div>
+
+    </div>
+    <hr style="border: none; padding: 15px;">
+
+    <form id="form-planilla" action="" method="post" novalidate>
+        {% csrf_token %}
+        <div class="fila">
+            <div class="contenedor90">
+                <div class="fila">
+                    <div class="col-6 col-xs-12 p-5"><label for="">Aseguradora</label>
+                        {{form.aseguradora}}
+                    </div>
+                    <div class="col-6 col-xs-12 p-5"><label for="">Poliza</label>
+                        {{form.poliza}}
+                    </div>
+                </div>
+                <hr class="p-5" style="border: none;">
+                <div class="fila">
+                    <div class="col-6 col-xs-12"><label for="">Plan</label>
+                        <br>
+                        <div class="col-4 col-xs-4 align-vertical-cen p-5">{{form.plan1}}<label for="">Vida</label>
+                        </div>
+                        <div class="col-4 col-xs-4  align-vertical-cen p-5">{{form.plan2}}<label
+                                for="plan1">Vehiculo</label>
+                        </div>
+                        <div class="col-4 col-xs-4 align-vertical-cen p-5">{{form.plan3}}<label for="plan1">Casa</label>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xs-12 p-5"><label for="">Legajo</label>{{form.legajo}}</div>
+                </div>
+                <hr style="border: none; padding: 15px;">
+                <div class="fila">
+                    <h1>Datos del Titular/Tomador</h1>
+                </div>
+                <hr class="p-5" style="border: none;">
+                <div class="fila">
+                    <div class="col-6 col-xs-12 p-5"><label for="">Nombres y Apellidos</label>{{form.titular}}</div>
+                    <div class="col-3 col-xs-12 p-5"><label for="">Documento</label>{{form.documento}}
+                    </div>
+                    <div class="col-3 col-xs-12 p-5"><label for="">Tipo Documento</label>{{form.tipodoc}}
+                    </div>
+                </div>
+                <hr class="p-5" style="border: none;">
+                <div class="fila">
+                    <div class="col-6 col-xs-12 p-5"><label for="">Fecha de
+                            Nacimiento</label><br>{{form.fechanacimiento}}
+                    </div>
+                    <div class="col-3 col-xs-6 p-5"><label for="">Edad<br></label>{{form.edad}}</div>
+                    <div class="col-3 col-xs-6 p-5"><label for="">Telefono</label>{{form.telefono}}</div>
+                </div>
+                <hr class="p-5" style="border: none;">
+
+                <div class="fila">
+                    <div class="col-12 col-xs-12 p-5"><label for="">Correo electrónico<br></label>{{form.correo}}
+                    </div>
+                </div>
+                <hr style="border: none; padding: 15px;">
+                <div class="fila">
+                    <h1>Capital</h1>
+                </div>
+                <div class="fila">
+                    <div class="col-6 col-xs-6 p-5"><label for="">Monto Asegurado<br></label>{{form.montoasegurado}}
+                    </div>
+                    <div class="col-6 col-xs-6 p-5"><label for="">Fecha de Inicio<br></label>{{form.fechainicio}}
+                    </div>
+                </div>
+                <hr class="p-5" style="border: none;">
+                <div class="fila">
+                    <div class="col-12 col-xs-12">
+                        <label for="">Cobertura Adicional</label><br>
+                        <div class="col-2 col-xs-4 align-vertical-cen p-5">{{form.cobertura1}}<label for="">Plan
+                                A</label>
+                        </div>
+                        <div class="col-2 col-xs-4 align-vertical-cen p-5">{{form.cobertura2}}<label for="">Plan
+                                B</label>
+                        </div>
+                        <div class="col-2 col-xs-4 align-vertical-cen p-5">{{form.cobertura3}}<label for="">Plan
+                                C</label>
+                        </div>
+                        <div class="col-6"></div>
+                    </div>
+                </div>
+            </div>
+            <hr style="border: none; padding: 15px;">
+            <div class="col-12 col-xs-12 border-table">
+                <table id="tb-beneficiario" class="col-12 col-xs-12">
+                    <caption>
+                        BENEFICIARIOS
+                        <i class="fa i-add fa-user-plus fa-lg" style="float: right;"
+                            onclick="document.getElementById('id01').style.display='block'"></i>
+                    </caption>
+
+                    <thead>
+                        <tr>
+                            <!--table row-->
+                            <th>Nombre Completo</th> <!-- table head Create a column width Head title-->
+                            <th>Parentesco</th>
+                            <th>Edad</th>
+                            <th>Domicilio</th>
+                            <th>Documento</th> <!-- table head Create a column width Head title-->
+                            <th>%</th>
+                            <th>Tutor</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jesus Alexander Romero Moluna</td>
+                            <td>Hermano</td> <!-- table data Create a cell for a Column-->
+                            <td>44</td>
+                            <td>Mar de Plata</td>
+                            <td>2017536663</td>
+                            <td>25%</td>
+                            <td>No aplica</td>
+                            <td><i class="fa fa-minus-circle i-delete" aria-hidden="true"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr style="border: none; padding: 15px;">
+            <div class="col-12 col-xs-12 border-table">
+                <div class="fila p-7">
+                    <h1><i class="fa fa-heartbeat" aria-hidden="true"></i> Declaración de Salud</h1>
+                </div>
+                <div class="fila">
+                    <div class="col-10 col-xs-9"><label for="">¿Pregunta sobre enfermedades operaciones etc?</label>
+                    </div>
+                    <div class="col-2 col-xs-3">
+                        {{form.pregunta1}}
+                    </div>
+                </div>
+                <hr style="border: none; padding: 5px;">
+                <div class="fila">
+                    <div class="col-10 col-xs-9"><label for="">¿Pregunta sobre enfermedades operaciones situacion actual
+                            accidentes y
+                            cualquier otra enfermedad que sufra o haya sufrido el cliente?</label></div>
+                    <div class="col-2 col-xs-3">
+                        {{form.pregunta2}}
+                    </div>
+                </div>
+                <hr style="border: none; padding: 5px;">
+                <div class="fila">
+                    <div class="col-10 col-xs-9"><label for="">¿Sufre uds de Enfermedades Cardiacas?</label></div>
+                    <div class="col-2 col-xs-3">
+                        {{form.pregunta3}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr style="border: none; padding: 15px;">
+        <div class="fila text-align-center">
+            <button class="btn-enviar-planilla col-6 p-7" type="submit">Guardar</button>
+            <button class="btn-cancelar-planilla col-6 p-7" type="button"
+                onclick="location.href='/profile/'">Cancelar</button>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

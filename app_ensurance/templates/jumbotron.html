@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% block content%}
+<div id="jumbotron" class="fila col-xs-12 col-sm-12">
+    <div class="col-8 col-xs-12 col-sm-6">
+        <div class="fila col-12">
+            <span>
+                <p class="text-jumbo">
+                    Plataforma para vendedores de seguros de vida
+                </p>
+            </span>
+        </div>
+
+        <div class="fila col-12 align-con-cen">
+            <button class="btn-jumbo">Quiero
+                asegurarme</button>
+        </div>
+    </div>
+    <div class="col-4 col-xs-12 col-sm-6 align-con-cen">
+        <div class="fila col-8 col-xs-10 col-sm-9 col-md-9">
+            <form id="form-index" action="">
+                <div class="fila">
+                    <span>
+                        <p
+                            style="text-align:center; color:rgb(129, 221, 141); font-size: 1.5rem; font-weight: 600; text-justify: center;">
+                            Dejenos sus
+                            datos y lo
+                            contactaremos</p>
+                    </span>
+                </div>
+                <div class="fila align-con-cen">
+                    <input type="text" name="" id="" value="Nombre y Apellido">
+                </div>
+                <div class="fila align-con-cen">
+                    <input type="mail" name="" id="" value="Correo electronico">
+                </div class="fila">
+                <div class="fila align-con-cen">
+                    <input type="tel" name="" id="" value="Telefono movil">
+                </div>
+                <div class="fila align-con-cen">
+                    <select name="planes" id="planes">
+                        <option value="0">¿Plan de interes?</option>
+                        <option value="1">Plan 1</option>
+                        <option value="2">Plan 2</option>
+                        <option value="3">Plan 3</option>
+                    </select>
+                </div class="fila">
+                <div class="fila" style="margin-top: 1rem;">
+                    <div class="col-12 align-con-cen"><button class="btn-enviar-form" type="submit">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}

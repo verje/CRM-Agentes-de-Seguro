@@ -1,0 +1,57 @@
+{% extends 'base.html'%} {% block content %}
+<div id="div-mensajes" class="col-12 col-xs-12" style="background-color: lightgrey; text-align: center;">
+    {% if form.errors %}
+    <p class="p-7">Debe llenar todos los campos</p>
+    {% endif %}
+</div>
+<div class="contenedor80 border-table" style="margin-top:2rem;">
+    <div class="col-12 text-align-center"
+        style="padding: 30px; color: white; border-radius: 5px 5px 0 0; background: rgb(75,101,244);
+            background: linear-gradient(180deg, rgb(161, 174, 248) 0%, rgb(191, 204, 238) 33%, rgba(240,240,240,1) 35%, rgba(240,240,240,1) 100%);">
+    </div>
+
+    <form id="form-planilla" action="" method="post" novalidate>
+        {% csrf_token %}
+        <div class="fila">
+            <div class="contenedor90">
+                <div class="fila">
+                    <h1>DATOS DEL CLIENTE</h1>
+                </div>
+                <hr class="p-5" style="border: none;">
+                <div class="fila">
+                    <div class="col-6 col-xs-12 p-5"><label for="">Nombres y Apellidos</label>{{form.titular}}</div>
+                    <div class="col-3 col-xs-12 p-5"><label for="">Documento</label>{{form.documento}}
+                    </div>
+                    <div class="col-3 col-xs-12 p-5"><label for="">Tipo Documento</label>{{form.tipodoc}}
+                    </div>
+                </div>
+                <hr class="p-5" style="border: none;">
+                <div class="fila">
+                    <div class="col-6 col-xs-12 p-5"><label for="">Fecha de
+                            Nacimiento</label><br>{{form.fechanacimiento}}
+                    </div>
+                    <div class="col-3 col-xs-6 p-5"><label for="">Edad<br></label>{{form.edad}}</div>
+                    <div class="col-3 col-xs-6 p-5"><label for="">Telefono</label>{{form.telefono}}</div>
+                </div>
+                <hr class="p-5" style="border: none;">
+
+                <div class="fila">
+                    <div class="col-12 col-xs-12 p-5"><label for="">Correo electrónico<br></label>{{form.correo}}
+                    </div>
+                </div>
+                <hr style="border: none; padding: 15px;">
+
+            </div>
+        </div>
+        <hr style="border: none; padding: 15px;">
+        <div class="fila text-align-center">
+            <button class="btn-enviar-planilla col-6 p-7" type="submit">Guardar</button>
+            <button class="btn-cancelar-planilla col-6 p-7" type="button"
+                onclick="location.href='/profile/'">Cancelar</button>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

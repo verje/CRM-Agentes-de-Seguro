@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+<hr class="separador1">
+<div class="contenedor" style="
+background-image: linear-gradient(rgba(34, 34, 43, 0.7), rgba(30, 30, 32, 0.7)), url(../../static/images/bg-tabla.jpg);
+background-repeat: no-repeat;
+background-size: cover; padding: 4rem;
+">
+    <div class="contenedor80">
+        <div class="border-table">
+            {% if messages %}
+            <ul class="messages mb-3">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }} list-group-item list-group-item-primary" {% endif %}>
+                    {{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
+            <table class="">
+                <caption>
+                    PLANILLAS
+                    <a href="/planilla/" style="float: right;"><i class="fa fa-address-book-o fa-lg"></i></a>
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Aseguradora</th>
+                        <th>Poliza</th>
+                        <th>Cliente</th>
+                        <th>Monto Asegurado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for planilla in object_list %}
+                    <tr>
+                        <td>{{ planilla.aseguradora }}</td>
+                        <td>{{ planilla.poliza }}</td>
+                        <td>{{ planilla.titular }}</td>
+                        <td>{{ planilla.montoasegurado }}</td>
+                        <td>
+                            <form method="POST" action="eliminar/{{planilla.id}}">
+                                {% csrf_token %}
+                                <div class="btn-group">
+                                    <a href="#" title="Ver" type="button" style="border: none; padding: 5px;"><i
+                                            class="fa fa-info-circle fa-lg" style="color: rgb(96, 96, 228);"></i></a>
+                                    <a href="#" title="Editar" type="button" style="border: none; padding: 5px;"><i
+                                            class="fa fa-pencil-square-o fa-lg"
+                                            style="color: rgb(241, 178, 59);"></i></a>
+
+                                    <button onclick="return eliminar();" type="submit" title="Eliminar"
+                                        style="border: none; padding: 5px;">
+                                        <i class="fa fa-trash-o fa-lg" style="color: tomato; "></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript">
+            function eliminar() {
+                var x = confirm("¿Continuar y eliminar esta Planilla?");
+                if (x)
+                    return true;
+                else
+                    return false;
+            }
+        </script>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<hr class="separador1">
+<div class="contenedor col-12 col-xs-12 align-con-cen">
+
+    <div class="col-4 col-xs-12 border-table">
+        <div class="col-12 col-xs-12"
+            style="border-radius:5px 5px 0 0;background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../static/images/seguridad.jpg); height:8rem; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        </div>
+
+        <div id="div-mensajes" class="col-12 col-xs-12 p-7" style="background-color: lightgrey; text-align: center;">
+            {% if form.errors %}
+            <p>Usuario o contraseña incorrectos. Por favor intente de nuevo</p>
+            {% endif %}
+
+            {% if next %}
+            {% if user.is_authenticated %}
+            <p>No está autorizado para ingresar a esta sección. Si tiene un usuario válido, ingrese a traves del menú
+                Agente de Seguros</p>
+            {% else %}
+            <p>Login es necesario para ver esta página</p>
+            {% endif %}
+            {% endif %}
+        </div>
+
+
+        <div class="col-12 col-xs-12 align-con-cen" style="padding: 1rem;">
+            <div class="col-10 col-xs-10">
+                <form id="form-login" method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class=" fila" style="padding: 0.5rem;">
+                        <div class="col-4 col-xs-6"><label for=""><i class="fa fa-user"
+                                    style="color: #00CC99;"></i>&nbsp;Usuario&nbsp;</label></div>
+                        <div class="col-8 col-xs-6">{{ form.username }}</div>
+                    </div>
+                    <div class="fila" style="padding: 1rem;">
+                        <div class="col-4 col-xs-6"><label for=""><i class="fa fa-key"
+                                    style="color: #00CC99;"></i>&nbsp;Contraseña&nbsp;</label></div>
+                        <div class="col-8 col-xs-6">{{ form.password }}</div>
+                    </div>
+                    <div class="fila align-con-cen" style="padding: 2rem;">
+                        <div class="col-6 col-xs-6" style="height: 2rem;"><button class="btn-login"
+                                type="submit">Login</button>
+                        </div>
+                        <div class="col-2 col-xs-2 text-align-center" style="height: 2rem;"><button type="button"
+                                onClick="location.href='/'" class="btn-cancel"><i class="fa fa-times"
+                                    style="color: white;"></i></button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
