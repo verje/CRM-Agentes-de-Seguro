@@ -75,13 +75,12 @@
     var bene = $("#beneficio-b").val();
     var tutor = $("#tutor-b").val();
 
-    var markup = `<tr><td>` + nombre + `</td><td>` + paren + `</td><td>` + edad + `</td><td>` + loc + `</td><td>` + doc + `</td><td>` + bene + `</td><td>` + tutor + `</td><td><i class="fa fa-minus-circle"></i></td></tr>`;
+    var markup = `<tr><td>` + nombre + `</td><td>` + paren + `</td><td>` + edad + `</td><td>` + loc + `</td><td>` + doc + `</td><td>` + bene + `</td><td>` + tutor + `</td><td><i class="fa fa-minus-circle i-delete"></i></td></tr>`;
     $("table tbody").append(markup);
 
     $("#nombre-b").val("");
     $("#documento-b").val("");
     $("#edad-b").val(0);
-    $("#parentesco-b").text("");
     $("#localidad-b").val("");
     $("#beneficio-b").val(0);
     $("#tutor-b").val("");

@@ -50,7 +50,7 @@ caption i:hover {
 
 #form-planilla input[type="date"],input[type="number"] {
     background-color: rgba(241, 234, 234, 0.8);
-    width: 35%;
+    width: 45%;
     border-bottom: 1px solid lightgreen;
 }
 
@@ -78,6 +78,18 @@ caption i:hover {
 #form-planilla button:hover{
     background-color: rgb(99, 123, 230);
     transition: all 0.3s ease;
+}
+
+.btn-guardar-cliente{
+    background-color: #3D4850;
+    border-radius: 5px 0 0 5px;
+    width: 50%;
+}
+
+.btn-cancelar-cliente{
+    background-color: #00CC99;
+    border-radius: 0px 5px 5px 0px;
+    width: 50%
 }
 
 .btn-enviar-planilla{
